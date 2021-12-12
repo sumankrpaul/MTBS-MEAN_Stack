@@ -1,4 +1,4 @@
-const AuthUsersModel = require('./AuthUsers.modell')
+const AuthUsersModel = require('./AuthUsers.model')
 const CustomersModel = require('./Customer.model')
 const AdminModel = require('./Admin.model')
 const MoviesModel = require('./Movies.model')

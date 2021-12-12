@@ -25,17 +25,19 @@ const AuthUserSchema = new mongoose.Schema({
 
 // Encrypt Password
 
-AuthUserSchema.statics.getEncryptPassword = function(password) {
-  const salt = bcrypt.genSaltSync(saltRounds);
-  const hash = bcrypt.hashSync(password, salt);
-  return hash;
+getEncryptPassword = (password) => {
+	const salt = bcrypt.genSaltSync(saltRounds);
+	const hash = bcrypt.hashSync(password, salt);
+	return hash
 }
 
-AuthUserSchema.pre('save', function (next){
+AuthUserSchema.statics.getEncryptPassword = getEncryptPassword;
+
+AuthUserSchema.pre('save', function (next) {
 	const userSchema = this;
 	this.isModified
 	if(userSchema.isModified('password')){
-    const hash = userSchema.getEncryptPassword(userSchema.password);
+    const hash = getEncryptPassword(userSchema.password);
 		userSchema.password = hash;
 		next();
 	} 
@@ -49,10 +51,9 @@ AuthUserSchema.pre('save', function (next){
 
 // Compare Password
 
-AuthUserSchema.methods.comparepassword = function (password) {
-	const userSchema = this;
+AuthUserSchema.methods.comparePassword = function (password) {
 	return new Promise((resolve, reject)=>{
-		bcrypt.compare(password, userSchema.password, (err, isMatch)=>{
+		bcrypt.compare(password, this.password, (err, isMatch)=>{
 			if(err) reject(err);
 			resolve(isMatch);
 		})
@@ -66,12 +67,11 @@ AuthUserSchema.methods.generateToken = function() {
 }
 
 AuthUserSchema.statics.getUserByToken = function(token) {
-	const userSchema = this;
 	return new Promise((resolve, reject)=> {
 		jwt.verify(token, configs.secret_string, (err, decode)=>{
 			if(err) reject(err);
 			else {
-				userSchema.findOne({"_id": decode}).exec((err, user)=>{
+				this.findOne({"_id": decode}).exec((err, user)=>{
 					if(err) reject(err);
 					else resolve(user);
 				});
