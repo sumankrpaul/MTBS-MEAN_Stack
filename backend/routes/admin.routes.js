@@ -1,14 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Controllers = require('../controllers');
+const middleware = require('../middlewares');
 
-router.get("/", Controllers.adminController.listOfAllAdmins);
+router.post("/sign_in", Controllers.adminController.signIn);
 
-router.post("/me/sign_in", Controllers.adminController.signIn);
+router.get("/", middleware.authenticate, Controllers.adminController.listOfAllAdmins);
 
-router.get("/me", function (req, res) {
-  res.status(200).send({ message: "my profile"});
-});
+router.get("/me", middleware.authenticate, Controllers.adminController.myProfile);
 
 router.put("/me", function (req, res) {
   res.status(200).send({ message: "update my profile"});

@@ -13,12 +13,12 @@ const AuthUserSchema = new mongoose.Schema({
   },
   adminProfile: {
     type:mongoose.Schema.Types.ObjectId,
-    ref: 'Admin',
+    ref: 'Admins',
     default: null
   },
   customerProfile: {
     type:mongoose.Schema.Types.ObjectId,
-    ref: 'Customer',
+    ref: 'Customers',
     default: null
   },
 }, { timestamps: { currentTime: ()=> Date.now() } })
@@ -71,7 +71,7 @@ AuthUserSchema.statics.getUserByToken = function(token) {
 		jwt.verify(token, configs.secret_string, (err, decode)=>{
 			if(err) reject(err);
 			else {
-				this.findOne({"_id": decode}).exec((err, user)=>{
+				this.findOne({"_id": decode}).populate('adminProfile').populate('customerProfile').exec((err, user)=>{
 					if(err) reject(err);
 					else resolve(user);
 				});

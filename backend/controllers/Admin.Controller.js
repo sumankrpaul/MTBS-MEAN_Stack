@@ -68,6 +68,7 @@ module.exports = {
       const adminList = await Service.adminService.getAdminList();
       res.json({
         status: "success",
+        user: req.user,
         admin_list: adminList
       })
     } catch (e) {
@@ -75,5 +76,11 @@ module.exports = {
       res.status(statusCode)
       .json(errorResponse)
     }
+  },
+  myProfile: async (req, res) => {
+    res.json({
+      status: "success",
+      profile: req.user.profile
+    })
   }
 }
