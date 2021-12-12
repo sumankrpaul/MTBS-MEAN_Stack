@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "MTBS-API",
-    "dateExported": "2021-12-12T11:25:24.399Z",
+    "dateExported": "2021-12-12T16:02:43.909Z",
     "version": "1.1",
     "folders": [{
         "containerId": "",
@@ -33,6 +33,73 @@
         "modified": "2021-12-12T11:23:20.062Z",
         "created": "2021-12-12T11:22:17.293Z",
         "_id": "34281ebf-6129-4bb1-a481-226fc1e68e2e",
+        "params": [],
+        "tests": []
+    }, {
+        "containerId": "52b41cf7-bac8-43b1-a26d-e92680b978e1",
+        "sortNum": 10000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }],
+        "colId": "457ec588-67fa-4a37-9627-7c22e946e10e",
+        "name": "Log In",
+        "url": "http://localhost:9090/api/admin/me/sign_in",
+        "method": "POST",
+        "modified": "2021-12-12T15:48:18.499Z",
+        "created": "2021-12-12T15:26:12.233Z",
+        "_id": "ecf48244-9197-4168-908f-e786e9ccbd5f",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n    \"email\": \"smnkumarpaul+admin1.gmail.com\",\n    \"password\": \"123\"\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "52b41cf7-bac8-43b1-a26d-e92680b978e1",
+        "sortNum": 20000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }],
+        "colId": "457ec588-67fa-4a37-9627-7c22e946e10e",
+        "name": "Add New Admin",
+        "url": "http://localhost:9090/api/admin/",
+        "method": "POST",
+        "modified": "2021-12-12T15:20:29.348Z",
+        "created": "2021-12-12T14:53:00.695Z",
+        "_id": "b0487c80-be5e-4386-ac86-5a969a2db0f2",
+        "params": [],
+        "body": {
+            "type": "json",
+            "raw": "{\n  \"first_name\": \"suman\",\n  \"middle_name\": \"kumar\",\n  \"last_name\": \"paul\",\n  \"default_password\": \"123\",\n  \"email\": \"smnkumarpaul+admin1.gmail.com\"\n}",
+            "form": []
+        },
+        "tests": []
+    }, {
+        "containerId": "52b41cf7-bac8-43b1-a26d-e92680b978e1",
+        "sortNum": 30000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }],
+        "colId": "457ec588-67fa-4a37-9627-7c22e946e10e",
+        "name": "Get Admin List",
+        "url": "http://localhost:9090/api/admin/",
+        "method": "GET",
+        "modified": "2021-12-12T14:54:27.377Z",
+        "created": "2021-12-12T14:54:14.447Z",
+        "_id": "3c9240d5-042a-4693-972c-b2690f610395",
         "params": [],
         "tests": []
     }]
