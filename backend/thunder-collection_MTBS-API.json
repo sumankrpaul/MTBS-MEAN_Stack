@@ -1,0 +1,39 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "MTBS-API",
+    "dateExported": "2021-12-12T11:25:24.399Z",
+    "version": "1.1",
+    "folders": [{
+        "containerId": "",
+        "sortNum": 10000,
+        "name": "Admin",
+        "_id": "52b41cf7-bac8-43b1-a26d-e92680b978e1",
+        "created": "2021-12-12T11:24:28.205Z"
+    }, {
+        "containerId": "",
+        "sortNum": 20000,
+        "name": "Customer",
+        "_id": "eabccc5b-b904-4354-9bad-b6c5765f02bd",
+        "created": "2021-12-12T11:25:12.701Z"
+    }],
+    "requests": [{
+        "containerId": "",
+        "sortNum": 10000,
+        "headers": [{
+            "name": "Accept",
+            "value": "*/*"
+        }, {
+            "name": "User-Agent",
+            "value": "Thunder Client (https://www.thunderclient.io)"
+        }],
+        "colId": "457ec588-67fa-4a37-9627-7c22e946e10e",
+        "name": "API Check",
+        "url": "http://localhost:9090/api",
+        "method": "GET",
+        "modified": "2021-12-12T11:23:20.062Z",
+        "created": "2021-12-12T11:22:17.293Z",
+        "_id": "34281ebf-6129-4bb1-a481-226fc1e68e2e",
+        "params": [],
+        "tests": []
+    }]
+}
