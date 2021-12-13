@@ -1,0 +1,12 @@
+<header class="position-static">
+  <nav class="bg-info navbar navbar-dark py-3">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1">MBTS</span>
+      <button class="btn btn-primary" (click)="openFormModal(loginForm)"> Sign In </button>
+    </div>
+  </nav>
+</header>
+
+<ng-template #loginForm let-modal>
+  <app-popupform-container></app-popupform-container>
+</ng-template>
