@@ -1,0 +1,22 @@
+<div class="d-flex flex-column justify-content-sm-between navigation text-light">
+    <ul class="d-flex flex-column navigation-group">
+        <li class="text-center" [routerLinkActive]="['active']">
+            <a [routerLink]="['admin-list']" class="d-block p-3"> Admins </a>
+        </li>
+        <li class="text-center" [routerLinkActive]="['active']">
+            <a [routerLink]="['movie-list']" class="d-block p-3"> Movies </a>
+        </li>
+        <li class="text-center" [routerLinkActive]="['active']">
+            <a [routerLink]="['customer-list']" class="d-block p-3"> Customers </a>
+        </li>
+    </ul>
+
+    <ul class="d-flex flex-column navigation-group">
+        <li class="p-3 text-center" [routerLinkActive]="['active']">
+            <a> Settings </a>
+        </li>
+        <li class="p-3 text-center" [routerLinkActive]="['active']">
+            <a> Log Off </a>
+        </li>
+    </ul>
+</div>

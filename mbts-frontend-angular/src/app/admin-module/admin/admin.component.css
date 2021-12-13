@@ -1,0 +1,7 @@
+.full-page {
+    height: 100%;
+}
+
+.body {
+    width: calc(100% - 170px);
+}
