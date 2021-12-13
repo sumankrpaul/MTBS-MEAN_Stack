@@ -1,0 +1,13 @@
+
+<div class="form-container bg-light p-3">
+    <h3 class="text-muted"> Login in as </h3>
+    <div class="form-wrapper">
+        <div class="form-header d-flex justify-content-center"> 
+            <a class="btn btn-lg form-selector-btn" [class.active]="activeForm === 'customer'" (click)="changeActiveForm('customer')"> Customer  </a>
+            <a class="btn btn-lg form-selector-btn" [class.active]="activeForm === 'admin'"  (click)="changeActiveForm('admin')" > Admin </a>
+        </div>
+        <div class="form-body">
+            <app-popupform [activeForm]="activeForm"></app-popupform>
+        </div>
+    </div>
+</div>

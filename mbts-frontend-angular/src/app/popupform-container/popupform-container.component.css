@@ -1,0 +1,11 @@
+.form-selector-btn {
+    transition: color .3s;
+    transition: border-bottom-color .3s;
+    font-weight: 500;
+    border-bottom: 7px solid transparent;
+}
+
+.form-selector-btn.active {
+    border-bottom-color: var(--bs-info);
+    color: var(--bs-info);
+}
