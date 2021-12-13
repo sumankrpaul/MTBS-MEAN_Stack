@@ -1,0 +1,10 @@
+
+.fullpage-wrapper {
+    position: relative;
+    height: 100vh;
+    overflow: auto;
+}
+.body-wrapper{
+    position: relative;
+    height: calc(100% - 70px);
+}
