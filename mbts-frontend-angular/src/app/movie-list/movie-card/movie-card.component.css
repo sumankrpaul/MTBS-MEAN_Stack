@@ -1,0 +1,15 @@
+.movie-card {
+    transition: box-shadow .3s;
+    box-shadow: 0 4px 6px 0 rgb(12 0 46 / 6%);
+}
+
+.movie-genre {
+    font-size: 1rem;
+    border-radius: 50px;
+    margin-right: 5px;
+}
+
+.movie-card:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    cursor: pointer;
+}
